@@ -6,8 +6,50 @@
     <title>Simple Calculator</title>
 </head>
 <body>
+    <h2 id="cal"> Simple Calculator</h2>
+    <p id="amount">Total Amount</p>
     <script>
 
+        // Item names
+        var rice = "Rice";
+        var sugar = "Sugar";
+        var wheat = "Wheat";
+
+        // Item prices
+        var ricePrice = 60;
+        var sugarPrice = 70;
+        var wheatPrice = 80;
+
+        // Quantities
+        var riceQuantity = 2;
+        var sugarQuantity = 3;
+        var wheatQuantity = 4;
+
+        // Cost of each item
+        var riceAmount = ricePrice*riceQuantity;
+        var sugarAmount = sugarPrice*sugarQuantity;
+        var wheatAmount = wheatPrice*wheatQuantity;
+
+        //Calculate total 
+        var total = riceAmount + sugarAmount + wheatAmount;   
+
+        // Dispaly results
+        console.log("Cost of Rice: " + riceAmount);
+        console.log("Cost of Sugar: " + sugarAmount);
+        console.log("Cost of Wheat: " + wheatAmount);
+        console.log("Total Amount: " + total);    
+
+        // Changed quantity
+        wheatQuantity = 5;
+        wheatAmount = wheatPrice * wheatQuantity;
+        total = riceAmount + sugarAmount + wheatAmount;
+
+        console.log("Updated Cost of Wheat: ₹" + wheatAmount);
+        console.log("Updated Total Bill: ₹" + total);
+ 
+        // Display 
+        document.getElementById("cal").innerHTML =  "Simple Grocery Calculator";
+        document.getElementById("amount").innerHTML = "Total Amount = "+ total;  
     </script>
 </body>
 </html>
