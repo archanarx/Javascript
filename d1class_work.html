@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store</title>
+</head>
+<body>
+    <h1 id = "cal"></h1>
+    <p id="amount">
+    <script>
+
+        // Item names
+        var tshirt = "tshirt";
+        var cap = "cap";
+
+        // Item Prices
+        var tshirtPrice = 400;
+        var capPrice = 150;
+
+        //Quantities
+        var tshirtQuantity = 5;
+        var capQuantity = 3;
+
+        // Cost of each item
+        var tshirtAmount = tshirtPrice*tshirtQuantity;
+        var capAmount = capPrice*capQuantity;
+        
+        // total
+        var total= tshirtAmount + capAmount;
+
+        // changed price
+        tshirtPrice = 450;
+        tshirtAmount = tshirtPrice * tshirtQuantity ;
+        total = tshirtAmount + capAmount ;
+
+        // dispaly
+        document.getElementById("cal").innerHTML =  "Online Store";
+        document.getElementById("amount").innerHTML = "Total Amount = "+ total;
+    </script>
+</body>
+</html>
