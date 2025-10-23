@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Bio Cleaner</title>
+</head>
+<body>
+    <h2>User Bio Cleaner Tool</h2>
+
+    <script>
+        // Step 1: Create an object with username and bio
+        var userProfile = {
+            username: " CoolUser99 ",
+            bio: " I LOVE coding! JavaScript is Great!!! "
+        };
+
+        // Step 2: Create a function to clean up the bio
+        function cleanUserBio(profile) {
+            // Trim spaces and convert both to lowercase
+            var cleanedUsername = profile.username.trim().toLowerCase();
+            var cleanedBio = profile.bio.trim().toLowerCase();
+
+            // Replace "javascript" with "JS"
+            cleanedBio = cleanedBio.replaceAll("javascript", "js");
+
+            // Count total characters in the cleaned bio
+            var bioLength = cleanedBio.length;
+
+            // Return a new object with cleaned data
+            return {
+                username: cleanedUsername,
+                bio: cleanedBio,
+                length: bioLength
+            };
+        }
+
+        // Step 3: Call the function and store the result
+        var cleanedProfile = cleanUserBio(userProfile);
+
+        // Step 4: Display the final result
+        console.log("Cleaned User Profile:");
+        console.log("Username: " + cleanedProfile.username);
+        console.log("Bio: " + cleanedProfile.bio);
+        console.log("Bio Length: " + cleanedProfile.length);
+    </script>
+</body>
+</html>
