@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Small statistics Widget</title>
+</head>
+<body>
+
+    <h2>Random number between 1 and 100:</h2>
+    <p id="randomNum"></p>
+
+    <h2>Stimulate a user score as a string value:</h2>
+    <p id="userScore"></p>
+
+    <h2>Difference between random number and user score:</h2>
+    <p id="difference"></p>
+
+    <h2>Rounded square root of user score:</h2>
+    <p id="sqrtScore"></p>
+
+    <h2>Value of π (Pi):</h2>
+    <p id="piValue"></p>
+
+    <h2>Implicit conversion of "50" * 2:</h2>
+    <p id="implicitResult"></p>
+
+
+    <script>
+        // Generate random number btw 1 and 100 
+        var randomNumber = Math.floor(Math.random() * 100) + 1;
+        document.getElementById("randomNum").innerHTML = randomNumber ;
+
+        // Simulate user score as string
+        var userScoreStr = "75";
+        document.getElementById("userScore").innerHTML = userScoreStr;
+
+        // Convert user score string to number
+        var userScore = Number(userScoreStr);
+
+        // Show difference
+        var difference = randomNumber - userScore;
+        document.getElementById("difference").innerHTML = difference;
+
+        // Show rounded square root of user score
+        var sqrtScore = Math.round(Math.sqrt(userScore));
+        document.getElementById("sqrtScore").innerHTML = sqrtScore;
+
+        // Show pi constant 
+        document.getElementById("piValue").innerHTML=Math.PI;
+
+        // Implicit conversion & multiplication
+        var implicitResult = "50" * 2;
+        document.getElementById("implicitResult").innerHTML = implicitResult;
+
+        //console 
+        console.log("Random Number: ", randomNumber);
+        console.log("User Score (String): ", userScoreStr);
+        console.log("User Score (Number): ", userScore);
+        console.log("Difference: ", difference);
+        console.log("Rounded √Score: ", sqrtScore);
+        console.log("Pi: ", Math.PI);
+        console.log(' "5" * 2 = ', implicitResult);
+    
+    </script>
+    
+</body>
+</html>
+
+
