@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Result Generator</title>
+</head>
+<body>
+    <h2>Random number between 1 and 50:</h2>
+    <p id="randomNum"></p>
+
+    <h2>User Score:</h2>
+    <p id="userScore"></p>
+
+    <h2>Absolute Difference:</h2>
+    <p id="difference"></p>
+
+    <h2>Square Root of User Score:</h2>
+    <p id="sqrtScore"></p>
+
+    <h2>Value of Pi :</h2>
+    <p id="piValue"></p>
+
+    <h2>Implicit Conversion ("20" * 5):</h2>
+    <p id="implicitResult"></p>
+
+    <h2>Highest and Lowest Among (10, 20, Mystery Level):</h2>
+    <p id="maxValue"></p>
+    <p id="minValue"></p>
+
+<script>
+        // Generate a random number btw 1 and 50.
+        var randomNumber = Math.floor(Math.random() * 50) + 1;
+        document.getElementById("randomNum").innerHTML = randomNumber ;
+        // Stimulate user score as string and convert to number.
+        var userScoreStr="45";
+        document.getElementById("userScore").innerHTML = userScoreStr;
+        var userScore = Number(userScoreStr);
+        // Absolute difference btw mystery level and user score.
+        var difference = Math.abs(randomNumber - userScore);
+        document.getElementById("difference").innerHTML = difference;
+        //Calculate square root of user score 
+        var sqrtScore = Math.sqrt(userScore);
+        document.getElementById("sqrtScore").innerHTML = sqrtScore.toFixed(2);
+
+        //Value of Pi
+        document.getElementById("piValue").innerHTML = Math.PI;
+        
+        //Implicit conversion-- multiply string "20" by 5
+        var implicitResult = "20" * 5;
+        document.getElementById("implicitResult").innerHTML = implicitResult;
+
+        // math.max() & math.min()
+        var maxValue = Math.max(10, 20, randomNumber);
+        var minValue = Math.min(10, 20, randomNumber);
+        document.getElementById("maxValue").innerHTML = "Max: "+ maxValue;
+        document.getElementById("minValue").innerHTML = "Min: "+ minValue;
+        
+        //Console
+        console.log("Mystery Level:", randomNumber);
+        console.log("User Score (String):", userScoreStr);
+        console.log("User Score (Number):", userScore);
+        console.log("Absolute Difference:", difference);
+        console.log("Square Root of Score:", sqrtScore);
+        console.log("Pi Value:", Math.PI);
+        console.log('"20" * 5 =', implicitResult);
+        console.log("Max Value:", maxValue);
+        console.log("Min Value:", minValue);
+    </script>
+</body>
+</html>
