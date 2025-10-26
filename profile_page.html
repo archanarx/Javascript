@@ -8,39 +8,39 @@
 <body>
   <h2>Check Admin Access</h2>
 
-  <!-- Button to trigger the check -->
+  
   <button onclick="checkAccess()">Check Access</button>
 
-  <!-- Paragraphs to show the results -->
+  
   <p id="accessResult"></p>
   <p id="ageCheck"></p>
   <p id="afterDelete"></p>
 
   <script>
-    // Step 1: Store user information in variables
+    
     var user = {
       name: "Alice",
       age: 22,
       isAdmin: true
     };
 
-    // Step 2: Create a function to run when button is clicked
+   
     function checkAccess() {
-      // Step 3: Check if 'age' property exists in the user object
+      
       var hasAge = "age" in user;
       document.getElementById("ageCheck").innerHTML = "Age property exists: " + hasAge;
 
-      // Step 4: Use conditional ? : operator to check access permission
+      
       var message = (user.age >= 18 && user.isAdmin)
         ? "Access Granted"
         : "Access Denied";
 
       document.getElementById("accessResult").innerHTML = message;
 
-      // Step 5: Delete the 'age' property
+      
       delete user.age;
 
-      // Step 6: Check again after deletion
+      
       var hasAgeAfterDelete = "age" in user;
       document.getElementById("afterDelete").innerHTML = "Age property after deletion: " + hasAgeAfterDelete;
     }
