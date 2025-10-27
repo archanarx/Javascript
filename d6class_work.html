@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Product Store</title>
+</head>
+<body>
+    <h2>Grocery Product List</h2>
+
+    <p id="allProducts"></p>
+    <p id="filteredProducts"></p>
+    <p id="updatedProducts"></p>
+    <script>
+        const productNames=["Apple", "Banana", "Orange", "Grapes", "Mango"];
+        const productPrices=[40,50,60,80,90];
+
+        const products = productNames.map((name, index) => ({
+            name: name,
+            price: productPrices[index],
+            info: `Product: ${name} - Price: ${productPrices[index]}`
+        }));
+
+
+        let allDisplay = "";
+        products.forEach(item => {
+            allDisplay += item.info + "<br>";
+        });
+        document.getElementById("allProducts").innerHTML = "<b>All Products:</b><br>" + allDisplay;
+
+
+        const filteredProducts = products.filter(item => item.price > 50);
+        let filteredDisplay = "";
+        filteredProducts.forEach(item =>{
+            filteredDisplay += item.info + "<br>";
+        });
+        document.getElementById("filteredProducts").innerHTML = "<br><b>Products with Price > 50:</b><br>" +filteredDisplay;
+        
+
+        products.push({
+            name: "Watermelon",
+            price: 70,
+            info: "Product: Watermelon - Price: 80"
+        });
+
+        const updatedDisplay =products.map(p => p.info).join("<br>");
+        document.getElementById("updatedProducts").innerHTML ="<b>Updated Product List:</b><br>" + updatedDisplay;
+
+    </script>
+</body>
+</html>
