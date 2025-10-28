@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Remainder Tool</title>
+</head>
+<body>
+    
+    <h2>Event Remainder Tool</h2>
+    <label for="pastDate">Enter a past date:</label><br>
+    <input type="date" id="pastDate">
+    <button onclick="checkEvent()">Check</button>
+    <div id="output"></div>
+
+   <script>
+    function checkEvent() {
+        const input = document.getElementById("pastDate").value;
+        
+        const pastDate = new Date(input);
+        const today = new Date();
+
+        const day = pastDate.getDate();
+        const monthName = pastDate.toLocaleString('default', { month: 'long'});
+        const year = pastDate.getFullYear();
+
+        let yearsPassed = today.getFullYear() - year;
+
+        if (
+            today.getMonth() < pastDate.getMonth() ||
+            (today.getMonth() === pastDate.getMonth() && today.getDate() < day)
+        ) {
+            yearsPassed--;
+        }
+
+        const message = yearsPassed >= 1 ?
+            "It has been more than a year since that date." :
+            "It has been less than a year since that date.";
+        
+        document.getElementById("output").innerHTML = `Date: ${day} ${monthName}, ${year} <br>
+        Full years passed: ${yearsPassed} <br>
+        ${message}`;
+
+        console.log(`Date: ${day} ${monthName}, ${year}`);
+        console.log(`Full years passed: ${yearsPassed}`);
+        console.log(message);
+    }
+   </script> 
+</body>
+</html>
