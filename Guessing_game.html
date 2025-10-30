@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+</head>
+<body>
+    <h2>Number Guessing Game</h2>
+
+    <script>
+        let correctNumber = 3; 
+        let chances = 0;      
+
+        while (chances < 5) {
+            let guess = parseInt(prompt("Enter a number between 1 and 5:"));
+
+            
+            if (guess < 1 || guess > 5 || isNaN(guess)) {
+                alert("Invalid input! You lost this chance.");
+                continue; 
+            }
+
+            chances++; 
+
+            
+            if (guess === correctNumber) {
+                alert("You guessed it right!");
+                break; 
+            } else {
+                alert("Wrong guess. Try again.");
+            }
+        }
+
+        
+        if (chances === 5) {
+            alert("Game over! Better luck next time.");
+        }
+    </script>
+</body>
+</html>
