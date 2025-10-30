@@ -3,26 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Number Guessing Game</title>
+    <title>Guessing Game</title>
 </head>
 <body>
     <h2>Number Guessing Game</h2>
 
     <script>
-        let correctNumber = 3; 
-        let chances = 0;      
+        let correctNumber = 3;
+        let chances = 0;       
 
         while (chances < 5) {
             let guess = parseInt(prompt("Enter a number between 1 and 5:"));
-
             
             if (guess < 1 || guess > 5 || isNaN(guess)) {
-                alert("Invalid input! You lost this chance.");
+                alert("Invalid input! That chance is skipped.");
                 continue; 
             }
 
-            chances++; 
+            chances++;
 
+            let numberWord = "";
+            switch (guess) {
+                case 1: numberWord = "One"; break;
+                case 2: numberWord = "Two"; break;
+                case 3: numberWord = "Three"; break;
+                case 4: numberWord = "Four"; break;
+                case 5: numberWord = "Five"; break;
+                default: numberWord = "Unknown";
+            }
+
+            alert(`You entered: ${numberWord}`);
             
             if (guess === correctNumber) {
                 alert("You guessed it right!");
@@ -32,7 +42,7 @@
             }
         }
 
-        
+
         if (chances === 5) {
             alert("Game over! Better luck next time.");
         }
