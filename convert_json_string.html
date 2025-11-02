@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Feedback Checker</title>
+</head>
+<body>
+    <h2>User Feedback Checker</h2>
+
+    <script>
+        // Sample JSON feedback string
+        const jsonFeedback = '{"name": "Alice", "message": "Thank you for your quick response!"}';
+        
+        try {
+            // Convert JSON string to JavaScript object
+            const feedback = JSON.parse(jsonFeedback);
+
+            // Named arrow function to check for the word "thank" (case-insensitive)
+            const checkFeedback = (msg => /thank/i.test(msg));
+
+            // Use the function and display appropriate message
+            if (checkFeedback(feedback.message)) {
+                alert("Positive feedback received");
+            } else {
+                alert("Feedback noted");
+            }
+
+        } catch (error) {
+            //  Handle invalid JSON errors
+            alert("Invalid JSON data!");
+            console.error(error);
+        }
+    </script>
+</body>
+</html>
