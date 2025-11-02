@@ -10,45 +10,37 @@
 
     <script>
         let purchaseCount = 0;
+        let grandTotal = 0; // to store total of all 5 purchases
 
         while (purchaseCount < 5) {
             let code = parseInt(prompt("Enter product code (1-3):\n1. Apple (₹30)\n2. Banana (₹10)\n3. Mango (₹50)"));
             let quantity = parseInt(prompt("Enter quantity:"));
 
             let total = 0;
-            let productName = "";
 
             switch (code) {
                 case 1:
-                    productName = "Apple";
                     total = 30 * quantity;
                     break;
                 case 2:
-                    productName = "Banana";
                     total = 10 * quantity;
                     break;
                 case 3:
-                    productName = "Mango";
                     total = 50 * quantity;
                     break;
-                    
                 default:
                     alert("Invalid product code! Skipping this entry.");
                     continue; 
             }
 
-            alert(`Product: ${productName}\nQuantity: ${quantity}\nTotal: ₹${total}`);
-
-            if (total > 100) {
-                alert("High purchase");
-            } else {
-                alert("Normal purchase");
-            }
+            // Add current total to grand total
+            grandTotal += total;
 
             purchaseCount++;
         }
 
-        alert("5 purchases completed. Thank you!");
+        // Show final total after all purchases
+        alert(`Total amount for 5 purchases: ₹${grandTotal}`);
     </script>
 </body>
 </html>
