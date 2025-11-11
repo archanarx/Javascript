@@ -39,7 +39,7 @@
         // Array of lottery ticket numbers
         const tickets = [101, 202, 303, 404, 505, 606, 707];
         document.getElementById("winner").style.color = "red";
-        
+
         function drawWinner() {
             // Select a random ticket
             const randomIndex = Math.floor(Math.random() * tickets.length);
@@ -57,6 +57,7 @@
             const modal = new bootstrap.Modal(document.getElementById('winnerModal'));
             modal.show();
         }
+        
     </script>
 
 </body>
