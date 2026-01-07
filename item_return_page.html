@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Return Page</title>
+</head>
+<body>
+    <h2>Item Return Page</h2>
+
+    <button onclick="checkReturn()"> Check Return Status</button>
+
+    <p id="returnResult"></p>
+    <p id="propertyCheck"></p>
+    <p id="afterDelete"></p>
+
+    <script>
+        var order = 
+        {
+            itemName: "Headset",
+            isDelivered: true,
+            daysSinceDelivery: 4
+        };
+
+        function checkReturn()
+        {
+            var hasItemName= "itemName" in order;
+            document.getElementById("propertyCheck").innerHTML ="itemName property exists: " + hasItemName;
+
+            var message = (order.isDelivered && order.daysSinceDelivery <= 7)
+            ? "Eligible for Return"
+            : "Return Period Expired"
+            document.getElementById("returnResult").innerHTML = message;
+            delete order.daysSinceDelivery;
+
+            var hasDaysProperty = "daysSinceDelivery" in order;
+            document.getElementById("afterDelete").innerHTML = "daysSinceDelivery exists after delete: " + hasDaysProperty;
+
+        }
+
+    </script>
+</body>
+</html>
