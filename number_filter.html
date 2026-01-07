@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Comment Number Filter</title>
+</head>
+<body>
+    <h2>User Comment Number Filter</h2>
+
+    <script>
+        function checkAndReplaceNumbers(comment) {
+            // Regular expression to find digits (anywhere in the comment)
+            const numberPattern = /\d+/g;
+
+            // Check if there are any digits
+            const hasNumber = numberPattern.test(comment);
+
+            // Replace all digits with the word "NUMBER"
+            const updatedComment = comment.replace(numberPattern, "NUMBER");
+
+            // Return both results
+            return {
+                numberFound: hasNumber,
+                newComment: updatedComment
+            };
+        }
+
+        // Test the function
+        const testComment = "My son is 12 years old. Our flat number is 45 and contact is 9876543210.";
+        const result = checkAndReplaceNumbers(testComment);
+
+        // Display the results
+        console.log(result);
+        alert(`Number Found: ${result.numberFound}\nUpdated Comment: ${result.newComment}`);
+    </script>
+</body>
+</html>
